@@ -1,6 +1,6 @@
 import { createServerClient } from '@supabase/ssr'
 
-import { Database } from '@/types/supabase'
+import { Database } from '@models/supabase'
 
 export const createClient = (
   cookies: Partial<{
