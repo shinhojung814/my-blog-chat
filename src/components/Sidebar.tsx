@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { AiFillGithub, AiFillHome, AiOutlineClose } from 'react-icons/ai'
 
+import IconButton from '@components/IconButton'
 import { cn } from '@utils/style'
 
 type SidebarProps = {
@@ -17,7 +18,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, close }) => {
       )}
     >
       <div className="flex justify-end lg:hidden">
-        <AiOutlineClose className="h-5 w-5" onClick={close} />
+        <IconButton Icon={AiOutlineClose} onClick={close} />
       </div>
       <Link href="/" className="w-48 font-medium text-gray-600 hover:underline">
         홈
@@ -35,15 +36,18 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, close }) => {
         카테고리
       </Link>
       <div className="flex items-center mt-10 gap-4">
-        <Link href={process.env.NEXT_PUBLIC_BLOG_URL as string} target="_blank">
-          <AiFillHome className="w-6 h-6" />
-        </Link>
-        <Link
+        <IconButton
+          Icon={AiFillHome}
+          component={Link}
+          href={process.env.NEXT_PUBLIC_BLOG_URL as string}
+          target="_blank"
+        />
+        <IconButton
+          Icon={AiFillGithub}
+          component={Link}
           href={process.env.NEXT_PUBLIC_GITHUB_URL as string}
           target="_blank"
-        >
-          <AiFillGithub className="w-6 h-6" />
-        </Link>
+        />
       </div>
     </div>
   )
