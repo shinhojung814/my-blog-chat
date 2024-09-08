@@ -13,7 +13,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, close }) => {
   return (
     <div
       className={cn(
-        'absolute lg:relative flex-col min-h-screen p-10 pr-6 gap-6 border-r bg-white text-base',
+        'absolute min-h-screen flex-col gap-6 border-r bg-white p-10 pr-6 text-base lg:relative',
         isOpen ? 'flex' : 'hidden',
       )}
     >
@@ -31,11 +31,11 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, close }) => {
       </Link>
       <Link
         href="/category"
-        className="w-58 font-medium text-gray-600 hover:underline"
+        className="w-48 font-medium text-gray-600 hover:underline"
       >
         카테고리
       </Link>
-      <div className="flex items-center mt-10 gap-4">
+      <div className="mt-10 flex items-center gap-4">
         <IconButton
           Icon={AiFillHome}
           component={Link}
