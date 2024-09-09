@@ -50,13 +50,13 @@ export default async function handler(
 
     const { title, category, tags, content } = fields
 
-    const postRequest: PostRequest = {
-      title: title?.[0] ?? '',
-      category: category?.[0] ?? '',
-      tags: tags?.[0] ?? '',
-      content: content?.[0] ?? '',
+    const postRequest = {
+      title: title?.[0],
+      category: category?.[0],
+      tags: tags?.[0],
+      content: content?.[0],
       image_url,
-    }
+    } as PostRequest
 
     const { data, error: insertError } = await supabase
       .from('Post')
