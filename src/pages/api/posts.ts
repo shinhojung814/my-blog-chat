@@ -3,6 +3,7 @@ import { readFileSync } from 'fs'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import { Post, PostRequest } from '@models/post'
+import { sanitizeFileName } from '@utils/posts'
 import { createClient } from '@utils/supabase/server'
 
 export const config = {
@@ -24,7 +25,7 @@ export default async function handler(
 
     if (files.image && Array.isArray(files.image)) {
       const file = files.image[0]
-      const fileName = `${file.newFilename}_${file.originalFilename}`
+      const fileName = `${file.newFilename}_${sanitizeFileName(file.originalFilename)}`
       const fileContent = readFileSync(file.filepath)
 
       const { data: uploadData, error: uploadError } = await supabase.storage
@@ -34,7 +35,6 @@ export default async function handler(
         })
 
       if (uploadError) {
-        console.error('Upload error:', uploadError)
         res.status(403).json({ error: 'Error uploading image' })
         return
       }
@@ -64,7 +64,6 @@ export default async function handler(
       .select()
 
     if (insertError) {
-      console.error('Insert error:', insertError)
       res.status(500).json({ error: 'Error inserting post' })
       return
     }
@@ -80,7 +79,6 @@ export default async function handler(
       res.status(500).json({ error: 'Error retrieving inserted post' })
     }
   } catch (error) {
-    console.error('Server error:', error)
     res.status(500).json({ error: 'Unexpected server error' })
   }
 }
