@@ -19,8 +19,8 @@ function PostDetailPage({
   image_url,
 }: PostDetailPageProps) {
   return (
-    <div className="flex flex-col container mx-auto pt-20 pb-40 px-4">
-      <h1 className="mb-8 text-4xl font-bold">{title}</h1>
+    <div className="flex flex-col container mx-auto pt-20 pb-40 px-4 gap-8">
+      <h1 className="text-4xl font-bold">{title}</h1>
       <div className="flex flex-row justify-between items-center">
         <div className="flex flex-row items-center gap-2">
           <Link
@@ -50,10 +50,10 @@ function PostDetailPage({
           width={0}
           height={0}
           sizes="100vw"
-          className="mt-8 h-auto w-full"
+          className="h-auto w-full"
         />
       )}
-      <MarkdownViewer source={content} className="min-w-full mt-8" />
+      <MarkdownViewer source={content} className="min-w-full" />
     </div>
   )
 }

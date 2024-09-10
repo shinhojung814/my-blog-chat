@@ -3,12 +3,13 @@ import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { FormEvent, useRef, useState } from 'react'
 
+import Input from '@components/Input'
 import { MarkdownEditor } from '@components/Markdown'
 import { createClient } from '@utils/supabase/client'
 
 const ReactSelect = dynamic(() => import('react-select'), { ssr: false })
 
-type WritePageProps = {
+type PostWritePageProps = {
   existingCategories: string[]
   existingTags: string[]
 }
@@ -18,7 +19,10 @@ type Option = {
   value: string
 }
 
-function WritePage({ existingCategories, existingTags }: WritePageProps) {
+function PostWritePage({
+  existingCategories,
+  existingTags,
+}: PostWritePageProps) {
   const router = useRouter()
 
   const [title, setTitle] = useState('')
@@ -29,6 +33,11 @@ function WritePage({ existingCategories, existingTags }: WritePageProps) {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    if (!title.length) return alert('제목을 입력해주세요.')
+    if (!category.length) return alert('카테고리를 선택해주세요.')
+    if (!tags.length) return alert('태그를 선택해주세요.')
+    if (!content.length) return alert('내용을 입력해주세요.')
 
     const formData = new FormData()
 
@@ -58,14 +67,14 @@ function WritePage({ existingCategories, existingTags }: WritePageProps) {
       <h1 className="mb-8 text-2xl font-medium">새로운 포스트</h1>
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col gap-3">
-          <input
+          <Input
             type="text"
             placeholder="제목"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className="rounded-md border border-gray-300 p-2 transition-all hover:border-gray-400"
           />
-          <input
+          <Input
             type="file"
             accept="image/*"
             ref={fileRef}
@@ -114,7 +123,7 @@ function WritePage({ existingCategories, existingTags }: WritePageProps) {
 }
 
 export const getServerSideProps: GetServerSideProps<
-  WritePageProps
+  PostWritePageProps
 > = async () => {
   const supabase = createClient()
   const { data } = await supabase.from('Post').select('category, tags')
@@ -131,4 +140,4 @@ export const getServerSideProps: GetServerSideProps<
   }
 }
 
-export default WritePage
+export default PostWritePage

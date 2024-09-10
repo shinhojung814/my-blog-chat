@@ -23,6 +23,8 @@ export default async function handler(
     const [fields, files] = await form.parse(req)
     let image_url: string | null = null
 
+    if (req.method !== 'POST') return res.status(405).end()
+
     if (files.image && Array.isArray(files.image)) {
       const file = files.image[0]
       const fileName = `${file.newFilename}_${sanitizeFileName(file.originalFilename)}`
