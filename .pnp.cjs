@@ -30,6 +30,7 @@ const RAW_RUNTIME_STATE =
           ["@babel/core", "npm:7.25.2"],\
           ["@supabase/ssr", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:0.5.1"],\
           ["@supabase/supabase-js", "npm:2.45.3"],\
+          ["@tanstack/react-query", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.55.4"],\
           ["@types/babel__core", "npm:7.20.5"],\
           ["@types/formidable", "npm:3.4.5"],\
           ["@types/node", "npm:20.16.3"],\
@@ -987,6 +988,38 @@ const RAW_RUNTIME_STATE =
           ["@swc/helpers", "npm:0.5.5"],\
           ["@swc/counter", "npm:0.1.3"],\
           ["tslib", "npm:2.7.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tanstack/query-core", [\
+      ["npm:5.55.4", {\
+        "packageLocation": "../../../.yarn/berry/cache/@tanstack-query-core-npm-5.55.4-0b4224b0ee-10c0.zip/node_modules/@tanstack/query-core/",\
+        "packageDependencies": [\
+          ["@tanstack/query-core", "npm:5.55.4"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tanstack/react-query", [\
+      ["npm:5.55.4", {\
+        "packageLocation": "../../../.yarn/berry/cache/@tanstack-react-query-npm-5.55.4-f0e718f216-10c0.zip/node_modules/@tanstack/react-query/",\
+        "packageDependencies": [\
+          ["@tanstack/react-query", "npm:5.55.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.55.4", {\
+        "packageLocation": "./.yarn/__virtual__/@tanstack-react-query-virtual-82d4b4ddbc/4/.yarn/berry/cache/@tanstack-react-query-npm-5.55.4-f0e718f216-10c0.zip/node_modules/@tanstack/react-query/",\
+        "packageDependencies": [\
+          ["@tanstack/react-query", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.55.4"],\
+          ["@tanstack/query-core", "npm:5.55.4"],\
+          ["@types/react", "npm:18.3.5"],\
+          ["react", "npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5883,6 +5916,7 @@ const RAW_RUNTIME_STATE =
           ["@babel/core", "npm:7.25.2"],\
           ["@supabase/ssr", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:0.5.1"],\
           ["@supabase/supabase-js", "npm:2.45.3"],\
+          ["@tanstack/react-query", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.55.4"],\
           ["@types/babel__core", "npm:7.20.5"],\
           ["@types/formidable", "npm:3.4.5"],\
           ["@types/node", "npm:20.16.3"],\
