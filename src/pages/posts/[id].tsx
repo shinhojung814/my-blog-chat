@@ -69,12 +69,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 
   const { title, category, tags, content, created_at, image_url } = data[0]
 
-  const formattedDate = new Date(created_at).toLocaleDateString('kr-KR', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })
-
   return {
     props: {
       id,
@@ -82,7 +76,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
       category,
       tags: JSON.parse(tags) as string[],
       content,
-      created_at: formattedDate,
+      created_at,
       image_url,
     },
   }
