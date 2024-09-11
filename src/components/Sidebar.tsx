@@ -1,8 +1,10 @@
+import { useQuery } from '@tanstack/react-query'
 import Link from 'next/link'
 import { AiFillGithub, AiFillHome, AiOutlineClose } from 'react-icons/ai'
 
 import IconButton from '@components/IconButton'
 import { cn } from '@utils/style'
+import { createClient } from '@utils/supabase/client'
 
 type SidebarProps = {
   isOpen: boolean
@@ -10,6 +12,26 @@ type SidebarProps = {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, close }) => {
+  const supabase = createClient()
+
+  const { data: existingCategories } = useQuery({
+    queryKey: ['categories'],
+    queryFn: async () => {
+      const { data } = await supabase.from('Post').select('category')
+
+      return Array.from(new Set(data?.map((data) => data.category)))
+    },
+  })
+
+  const { data: existingTags } = useQuery({
+    queryKey: ['tags'],
+    queryFn: async () => {
+      const { data } = await supabase.from('Post').select('tags')
+
+      return Array.from(new Set(data?.flatMap((data) => JSON.parse(data.tags))))
+    },
+  })
+
   return (
     <div
       className={cn(
@@ -29,12 +51,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, close }) => {
       >
         태그
       </Link>
-      <Link
-        href="/category"
-        className="w-48 font-medium text-gray-600 hover:underline"
-      >
-        카테고리
-      </Link>
+      {existingCategories?.map((category) => (
+        <Link
+          key={category}
+          href={`/categories/${category}`}
+          className="w-48 font-medium text-gray-600 hover:underline"
+        >
+          {category}
+        </Link>
+      ))}
       <div className="mt-10 flex items-center gap-4">
         <IconButton
           Icon={AiFillHome}
@@ -47,6 +72,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, close }) => {
           component={Link}
           href={process.env.NEXT_PUBLIC_GITHUB_URL as string}
           target="_blank"
+        />
+        <img
+          src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fmy-blog-chat.vercel.app&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=%EB%B0%A9%EB%AC%B8%EC%9E%90&edge_flat=false"
+          alt="visit"
         />
       </div>
     </div>

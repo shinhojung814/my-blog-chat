@@ -2,15 +2,15 @@ import { GetServerSideProps } from 'next'
 
 import PostList from '@components/PostList'
 
-type TagsPageProps = {
+type TagPageProps = {
   tag: string
 }
 
-function TagsPage({ tag }: TagsPageProps) {
+function TagPage({ tag }: TagPageProps) {
   return <PostList tag={tag} />
 }
 
-export const getServerSideProps: GetServerSideProps<TagsPageProps> = async ({
+export const getServerSideProps: GetServerSideProps<TagPageProps> = async ({
   query,
 }) => {
   return {
@@ -20,4 +20,4 @@ export const getServerSideProps: GetServerSideProps<TagsPageProps> = async ({
   }
 }
 
-export default TagsPage
+export default TagPage
