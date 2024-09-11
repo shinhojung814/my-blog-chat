@@ -52,7 +52,7 @@ const PostList: React.FC<PostListProps> = ({ category, tag, className }) => {
       <h1 className={cn('text-2xl font-medium', !category && !tag && 'hidden')}>
         {category ? category : `# ${tag}`}
       </h1>
-      <div className="grid grid-cols-2 container mx-auto pt-20 pb-24 px-4 gap-x-4 gap-y-6 lg:gap-x-7 lg:gap-y-12">
+      <div className="grid grid-cols-2 container mx-auto pt-12 pb-24 px-4 gap-x-4 gap-y-6 lg:gap-x-7 lg:gap-y-12">
         {postPages?.pages
           .flatMap((page) => page.posts)
           .map((post) => <PostCard key={post.id} {...post} />)}

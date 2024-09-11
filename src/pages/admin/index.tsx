@@ -37,22 +37,22 @@ function AdminPage() {
   }, [])
 
   return (
-    <div className="flex flex-col container mx-auto pt-12 pb-20 px-4">
+    <div className="flex flex-col justify-center container min-h-full mx-auto px-4">
       {!!userResponse?.data.user ? (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col items-center mb-20 gap-4">
           <div className="mb-4 text-center">
             <b>{userResponse.data.user.email}</b> 로그인하였습니다.
           </div>
           <button
             type="button"
-            className="w-full py-2 rounded-md bg-gray-700 text-white"
+            className="w-1/2 py-2 rounded-md bg-gray-700 text-white"
             onClick={() => router.push('/write')}
           >
             포스트 작성하기
           </button>
           <button
             type="button"
-            className="w-full py-2 rounded-md bg-gray-700 text-white"
+            className="w-1/2 py-2 rounded-md bg-gray-700 text-white"
             onClick={() => {
               supabase.auth.signOut()
               router.push('/')
@@ -62,7 +62,7 @@ function AdminPage() {
           </button>
         </div>
       ) : (
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col items-center mb-20 gap-8">
           <h1 className="text-2xl font-medium">로그인</h1>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-3">
