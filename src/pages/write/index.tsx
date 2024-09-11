@@ -1,11 +1,11 @@
-import { useQuery } from '@tanstack/react-query'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { FormEvent, useRef, useState } from 'react'
 
+import Button from '@components/Button'
 import Input from '@components/Input'
 import { MarkdownEditor } from '@components/Markdown'
-import { createClient } from '@utils/supabase/client'
+import { useCategories, useTags } from '@utils/hooks'
 
 const ReactSelect = dynamic(() => import('react-select/creatable'), {
   ssr: false,
@@ -13,7 +13,6 @@ const ReactSelect = dynamic(() => import('react-select/creatable'), {
 
 function PostWritePage() {
   const router = useRouter()
-  const supabase = createClient()
 
   const [title, setTitle] = useState('')
   const [category, setCategory] = useState('')
@@ -21,23 +20,8 @@ function PostWritePage() {
   const [content, setContent] = useState('')
   const fileRef = useRef<HTMLInputElement>(null)
 
-  const { data: existingCategories } = useQuery({
-    queryKey: ['categories'],
-    queryFn: async () => {
-      const { data } = await supabase.from('Post').select('category')
-
-      return Array.from(new Set(data?.map((data) => data.category)))
-    },
-  })
-
-  const { data: existingTags } = useQuery({
-    queryKey: ['tags'],
-    queryFn: async () => {
-      const { data } = await supabase.from('Post').select('tags')
-
-      return Array.from(new Set(data?.flatMap((data) => JSON.parse(data.tags))))
-    },
-  })
+  const { data: existingCategories } = useCategories()
+  const { data: existingTags } = useTags()
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -71,7 +55,7 @@ function PostWritePage() {
   }
 
   return (
-    <div className="container mx-auto flex flex-col px-4 pb-20 pt-12">
+    <div className="flex flex-col container pb-20 pt-12">
       <h1 className="mb-8 text-2xl font-medium">새로운 포스트</h1>
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col gap-3">
@@ -114,12 +98,9 @@ function PostWritePage() {
             height={500}
           />
         </div>
-        <button
-          type="submit"
-          className="mt-4 w-full rounded-md bg-gray-700 py-2 text-white"
-        >
+        <Button type="submit" className="mt-4 w-full">
           작성하기
-        </button>
+        </Button>
       </form>
     </div>
   )

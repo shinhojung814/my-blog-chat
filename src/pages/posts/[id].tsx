@@ -19,7 +19,7 @@ function PostDetailPage({
   image_url,
 }: PostDetailPageProps) {
   return (
-    <div className="flex flex-col container mx-auto pt-20 pb-40 px-4 gap-8">
+    <div className="flex flex-col container pt-20 pb-40 gap-8">
       <h1 className="text-4xl font-bold">{title}</h1>
       <div className="flex flex-row justify-between items-center">
         <div className="flex flex-row items-center gap-2">

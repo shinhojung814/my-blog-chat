@@ -1,10 +1,9 @@
-import { useQuery } from '@tanstack/react-query'
 import Link from 'next/link'
 import { AiFillGithub, AiFillHome, AiOutlineClose } from 'react-icons/ai'
 
 import IconButton from '@components/IconButton'
+import { useCategories } from '@utils/hooks'
 import { cn } from '@utils/style'
-import { createClient } from '@utils/supabase/client'
 
 type SidebarProps = {
   isOpen: boolean
@@ -12,25 +11,7 @@ type SidebarProps = {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, close }) => {
-  const supabase = createClient()
-
-  const { data: existingCategories } = useQuery({
-    queryKey: ['categories'],
-    queryFn: async () => {
-      const { data } = await supabase.from('Post').select('category')
-
-      return Array.from(new Set(data?.map((data) => data.category)))
-    },
-  })
-
-  const { data: existingTags } = useQuery({
-    queryKey: ['tags'],
-    queryFn: async () => {
-      const { data } = await supabase.from('Post').select('tags')
-
-      return Array.from(new Set(data?.flatMap((data) => JSON.parse(data.tags))))
-    },
-  })
+  const { data: existingCategories } = useCategories()
 
   return (
     <div
