@@ -55,6 +55,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:18.3.1"],\
           ["react-icons", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.3.0"],\
+          ["react-intersection-observer", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:9.13.1"],\
           ["react-select", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.8.0"],\
           ["supabase", "npm:1.191.3"],\
           ["tailwind-merge", "npm:2.5.2"],\
@@ -5941,6 +5942,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:18.3.1"],\
           ["react-icons", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.3.0"],\
+          ["react-intersection-observer", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:9.13.1"],\
           ["react-select", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.8.0"],\
           ["supabase", "npm:1.191.3"],\
           ["tailwind-merge", "npm:2.5.2"],\
@@ -6806,6 +6808,32 @@ const RAW_RUNTIME_STATE =
         ],\
         "packagePeers": [\
           "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["react-intersection-observer", [\
+      ["npm:9.13.1", {\
+        "packageLocation": "../../../.yarn/berry/cache/react-intersection-observer-npm-9.13.1-e97f4d95f9-10c0.zip/node_modules/react-intersection-observer/",\
+        "packageDependencies": [\
+          ["react-intersection-observer", "npm:9.13.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:9.13.1", {\
+        "packageLocation": "./.yarn/__virtual__/react-intersection-observer-virtual-58b8302981/4/.yarn/berry/cache/react-intersection-observer-npm-9.13.1-e97f4d95f9-10c0.zip/node_modules/react-intersection-observer/",\
+        "packageDependencies": [\
+          ["react-intersection-observer", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:9.13.1"],\
+          ["@types/react", "npm:18.3.5"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
           "react"\
         ],\
         "linkType": "HARD"\
