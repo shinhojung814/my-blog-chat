@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ isSidebarOpen, setIsSidebarOpen }) => {
           BLOG
         </h1>
       </Link>
-      <IconButton Icon={BsRobot} component={Link} href="/posts" />
+      <IconButton Icon={BsRobot} component={Link} href="/search" />
     </header>
   )
 }
