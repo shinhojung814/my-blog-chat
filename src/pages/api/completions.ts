@@ -14,19 +14,13 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<CompletionsResponse>,
 ) {
-  if (req.method !== 'GET') return res.status(405).end()
+  if (req.method !== 'POST') return res.status(405).end()
 
-  const messages: ChatCompletionMessageParam[] = []
+  const messages = req.body.messages as ChatCompletionMessageParam[]
 
   const response = await openai.chat.completions.create({
-    messages: [
-      {
-        role: 'system',
-        content: 'You are interacting with OpenAI.',
-      },
-      { role: 'user', content: 'gpt-3.5-turbo에 대해 설명해주세요.' },
-    ],
     model: 'gpt-3.5-turbo',
+    messages,
   })
 
   messages.push(response.choices[0].message)
