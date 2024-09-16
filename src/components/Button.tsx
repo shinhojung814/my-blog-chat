@@ -11,6 +11,7 @@ const Button: React.FC<ButtonProps> = ({ children, className, ...rest }) => {
         'py-2 rounded-md bg-gray-600 text-white transition-all hover:bg-gray-700',
         className,
       )}
+      {...rest}
     >
       {children}
     </button>
