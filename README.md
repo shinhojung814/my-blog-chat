@@ -1,4 +1,4 @@
-## 나만의 블로그 + 챗봇 프로젝트
+## 나만의 블로그 + 챗봇
 
 ```mermaid
 flowchart LR
@@ -27,9 +27,36 @@ flowchart LR
     Header -.-> Chatbot --- ChatbotResult -.-> Detail
     Sidebar -.-> TagList -.-> Tag -.-> Detail
     Sidebar -.-> Category -.-> Detail
-    Footer --> Authorize -.->|O| Create -.-> Detail
-    Authorize -.->|X|Admin
+    Footer --> Authorize -.->|YES|Create -.-> Detail
+    Authorize -.->|NO|Admin
     Footer -.-> Admin -.-> Create
 
     List -.-> Detail
+```
+
+## 나만의 챗봇 답변 플로우
+
+```mermaid
+graph LR
+    Input[입력 메세지 목록]
+    Output[출력 메세지 목록]
+    LLM((OpenAI API))
+    PostDB((PostDB))
+    IsFirstMessage(첫번째 메세지인가?)
+    System(시스템 메세지 추가)
+    Response(LLM 응답 메세지 추가)
+    IsFunction(LLM 응답이 함수인가?)
+    PostResult(참고할 글 메세지 추가)
+    PostListMetadata(글 목록 메타데이터)
+
+    Input --> IsFirstMessage
+    IsFirstMessage --> |YES|System --> LLM
+    IsFirstMessage --> |NO|LLM
+
+    PostListMetadata -.-> System
+    LLM --> Response
+    Response --> IsFunction
+
+    IsFunction --> |YES|PostDB --> PostResult --> LLM
+    IsFunction --> |NO|Output
 ```
