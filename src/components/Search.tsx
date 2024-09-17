@@ -14,6 +14,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import Button from '@components/Button'
 import IconButton from '@components/IconButton'
 import Message, { MessageProps } from '@components/Message'
+import { PostCardProps } from '@components/PostCard'
 
 const Search: React.FC = () => {
   const [messageParams, setMessageParams] = useState<
@@ -29,10 +30,39 @@ const Search: React.FC = () => {
   }, [])
 
   const messagePropsList = useMemo(() => {
-    return messageParams.filter(
-      (param): param is MessageProps =>
-        param.role === 'user' || param.role === 'assistant',
-    )
+    let posts: Omit<PostCardProps, 'className'>[] = []
+
+    const result = messageParams.reduce<MessageProps[]>((acc, current) => {
+      if (current.role === 'function' && current.content) {
+        posts.push(
+          JSON.parse(current.content) as Omit<PostCardProps, 'className'>,
+        )
+      }
+
+      if (current.role === 'user') {
+        posts = []
+
+        return [...acc, current as MessageProps]
+      }
+
+      if (current.role === 'assistant') {
+        const newResult = [
+          ...acc,
+          {
+            ...current,
+            posts: [...posts],
+          } as MessageProps,
+        ]
+
+        posts = []
+
+        return newResult
+      }
+
+      return acc
+    }, [])
+
+    return result
   }, [messageParams])
 
   const { mutate, isPending } = useMutation<

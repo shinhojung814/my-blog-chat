@@ -1,13 +1,17 @@
 import { BsFillPersonFill, BsRobot } from 'react-icons/bs'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
+import PostCard, { PostCardProps } from '@components/PostCard'
 import { cn } from '@utils/style'
 
 export type MessageProps = {
   role: 'user' | 'assistant'
   content: string
+  posts?: Omit<PostCardProps, 'className'>[]
 }
 
-const Message: React.FC<MessageProps> = ({ role, content }) => {
+const Message: React.FC<MessageProps> = ({ role, content, posts }) => {
   return (
     <div
       className={cn('p-4 lg:p-6', role === 'user' ? 'bg-white' : 'bg-gray-100')}
@@ -19,7 +23,23 @@ const Message: React.FC<MessageProps> = ({ role, content }) => {
           <BsRobot className="w-6 h-6 shrink-0" />
         )}
         <div className="flex flex-col items-start">
-          <div className="whitespace-pre-wrap">{content}</div>
+          <ReactMarkdown
+            className="whitespace-pre-wrap"
+            remarkPlugins={[remarkGfm]}
+          >
+            {content}
+          </ReactMarkdown>
+          {posts && posts.length > 0 && (
+            <div className="flex justify-start mt-4">
+              {posts.map((post) => (
+                <PostCard
+                  key={post.id}
+                  className="w-[300px] border"
+                  {...post}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -5080,7 +5080,9 @@ __metadata:
     react-dom: "npm:^18"
     react-icons: "npm:^5.3.0"
     react-intersection-observer: "npm:^9.13.1"
+    react-markdown: "npm:^9.0.1"
     react-select: "npm:^5.8.0"
+    remark-gfm: "npm:^4.0.0"
     supabase: "npm:1.191.3"
     tailwind-merge: "npm:^2.5.2"
     tailwindcss: "npm:^3.4.10"
@@ -5868,7 +5870,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-markdown@npm:~9.0.1":
+"react-markdown@npm:^9.0.1, react-markdown@npm:~9.0.1":
   version: 9.0.1
   resolution: "react-markdown@npm:9.0.1"
   dependencies:
@@ -6122,7 +6124,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remark-gfm@npm:~4.0.0":
+"remark-gfm@npm:^4.0.0, remark-gfm@npm:~4.0.0":
   version: 4.0.0
   resolution: "remark-gfm@npm:4.0.0"
   dependencies:

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Post } from '@models/post'
 import { cn } from '@utils/style'
 
-type PostCardProps = Omit<Post, 'tags'> & {
+export type PostCardProps = Omit<Post, 'tags'> & {
   className?: string
 }
 

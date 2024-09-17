@@ -58,7 +58,9 @@ const RAW_RUNTIME_STATE =
           ["react-dom", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:18.3.1"],\
           ["react-icons", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.3.0"],\
           ["react-intersection-observer", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:9.13.1"],\
+          ["react-markdown", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:9.0.1"],\
           ["react-select", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.8.0"],\
+          ["remark-gfm", "npm:4.0.0"],\
           ["supabase", "npm:1.191.3"],\
           ["tailwind-merge", "npm:2.5.2"],\
           ["tailwindcss", "npm:3.4.10"],\
@@ -1424,7 +1426,7 @@ const RAW_RUNTIME_STATE =
           ["@uiw/copy-to-clipboard", "npm:1.0.17"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:18.3.1"],\
-          ["react-markdown", "virtual:80553929d367e34523b151c0950b6d66f4edb7ffe61f70cdcd03e0e6ac5e0483d867797b1e65c9327ea2b972e62222f62a7b62454d085f901f19612cf489a1b5#npm:9.0.1"],\
+          ["react-markdown", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:9.0.1"],\
           ["rehype-attr", "npm:3.0.3"],\
           ["rehype-autolink-headings", "npm:7.1.0"],\
           ["rehype-ignore", "npm:2.0.2"],\
@@ -6127,7 +6129,9 @@ const RAW_RUNTIME_STATE =
           ["react-dom", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:18.3.1"],\
           ["react-icons", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.3.0"],\
           ["react-intersection-observer", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:9.13.1"],\
+          ["react-markdown", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:9.0.1"],\
           ["react-select", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.8.0"],\
+          ["remark-gfm", "npm:4.0.0"],\
           ["supabase", "npm:1.191.3"],\
           ["tailwind-merge", "npm:2.5.2"],\
           ["tailwindcss", "npm:3.4.10"],\
@@ -7111,10 +7115,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:80553929d367e34523b151c0950b6d66f4edb7ffe61f70cdcd03e0e6ac5e0483d867797b1e65c9327ea2b972e62222f62a7b62454d085f901f19612cf489a1b5#npm:9.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/react-markdown-virtual-aada10d0f6/4/.yarn/berry/cache/react-markdown-npm-9.0.1-02c77a4123-10c0.zip/node_modules/react-markdown/",\
+      ["virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:9.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/react-markdown-virtual-d724e089ff/4/.yarn/berry/cache/react-markdown-npm-9.0.1-02c77a4123-10c0.zip/node_modules/react-markdown/",\
         "packageDependencies": [\
-          ["react-markdown", "virtual:80553929d367e34523b151c0950b6d66f4edb7ffe61f70cdcd03e0e6ac5e0483d867797b1e65c9327ea2b972e62222f62a7b62454d085f901f19612cf489a1b5#npm:9.0.1"],\
+          ["react-markdown", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:9.0.1"],\
           ["@types/hast", "npm:3.0.4"],\
           ["@types/react", "npm:18.3.5"],\
           ["devlop", "npm:1.1.0"],\
