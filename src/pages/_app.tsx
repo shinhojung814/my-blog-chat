@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <div
         className={cn(
-          'flex h-screen w-screen text-sm lg:text-base',
+          'flex w-screen h-screen text-sm lg:text-base',
           inter.className,
         )}
       >
