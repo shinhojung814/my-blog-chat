@@ -24,12 +24,12 @@ export default function App({ Component, pageProps }: AppProps) {
         )}
       >
         <Sidebar isOpen={isSidebarOpen} close={() => setIsSidebarOpen(false)} />
-        <div className="flex flex-1 flex-col">
+        <div className="flex flex-col flex-1">
           <Header
             isSidebarOpen={isSidebarOpen}
             setIsSidebarOpen={setIsSidebarOpen}
           />
-          <div className="flex flex-1 flex-col overflow-y-auto">
+          <div className="flex flex-col flex-1 overflow-y-auto">
             <main className="flex flex-col flex-1">
               <Component {...pageProps} />
             </main>

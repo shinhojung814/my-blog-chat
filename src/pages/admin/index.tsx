@@ -30,12 +30,13 @@ function AdminPage() {
   }
 
   useEffect(() => {
-    ;(async () => {
+    const fetchUser = async () => {
       const user = await supabase.auth.getUser()
-
       setUserResponse(user)
-    })()
-  }, [])
+    }
+
+    fetchUser()
+  }, [supabase])
 
   return (
     <div className="flex flex-col justify-center container min-h-full">

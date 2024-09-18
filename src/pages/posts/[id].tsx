@@ -50,7 +50,7 @@ function PostDetailPage({
           width={0}
           height={0}
           sizes="100vw"
-          className="h-auto w-full"
+          className="w-full h-auto"
         />
       )}
       <MarkdownViewer source={content} className="min-w-full" />

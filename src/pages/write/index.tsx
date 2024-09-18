@@ -98,7 +98,7 @@ function PostWritePage() {
             height={500}
           />
         </div>
-        <Button type="submit" className="mt-4 w-full">
+        <Button type="submit" className="w-full mt-4">
           작성하기
         </Button>
       </form>
