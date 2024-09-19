@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "eslint --fix",
-    "genTypes": "supabase gen types typescript --project-id ixyjihpujiugurmokecq > src/models/supabase.ts"
+    "genTypes": "supabase gen types typescript --project-id ixyjihpujiugurmokecq > src/models/supabase.ts",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@babel/core": "^7.25.2",
@@ -41,9 +42,11 @@
     "@types/react-dom": "^18",
     "babel-loader": "^9.0.0",
     "babel-plugin-transform-remove-imports": "^1.8.0",
+    "cypress": "^13.14.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.7",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-cypress": "^3.5.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-tailwindcss": "^3.17.4",
     "postcss": "^8.4.45",

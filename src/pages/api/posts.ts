@@ -3,6 +3,7 @@ import { readFileSync } from 'fs'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import { Post, PostRequest } from '@models/post'
+import { PostgrestError } from '@supabase/supabase-js'
 import { sanitizeFileName } from '@utils/posts'
 import { createClient } from '@utils/supabase/server'
 
@@ -14,7 +15,7 @@ export const config = {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Post | { error: string }>,
+  res: NextApiResponse<Post | PostgrestError | { error: string }>,
 ) {
   try {
     const supabase = await createClient(req.cookies)
@@ -22,6 +23,19 @@ export default async function handler(
     const form = formidable({ multiples: true })
     const [fields, files] = await form.parse(req)
     let image_url: string | null = null
+
+    if (req.method === 'DELETE') {
+      const { error } = await supabase
+        .from('Post')
+        .delete()
+        .eq('category', 'Test')
+
+      if (error) {
+        return res.status(403).json(error)
+      } else {
+        return res.status(200).end()
+      }
+    }
 
     if (req.method !== 'POST') return res.status(405).end()
 

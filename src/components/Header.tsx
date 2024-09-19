@@ -14,6 +14,7 @@ const Header: React.FC<HeaderProps> = ({ isSidebarOpen, setIsSidebarOpen }) => {
     <header className="flex h-14 items-center justify-between border-b px-4 lg:h-16 lg:px-6">
       <IconButton
         Icon={isSidebarOpen ? AiOutlineClose : AiOutlineMenu}
+        label="sidebarToggle"
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
       />
       <Link href="/">
@@ -21,7 +22,12 @@ const Header: React.FC<HeaderProps> = ({ isSidebarOpen, setIsSidebarOpen }) => {
           BLOG
         </h1>
       </Link>
-      <IconButton Icon={BsRobot} component={Link} href="/search" />
+      <IconButton
+        Icon={BsRobot}
+        label="searchLink"
+        component={Link}
+        href="/search"
+      />
     </header>
   )
 }

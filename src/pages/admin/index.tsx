@@ -56,6 +56,17 @@ function AdminPage() {
             type="button"
             className="w-1/2"
             onClick={() => {
+              fetch('/api/posts', {
+                method: 'DELETE',
+              })
+            }}
+          >
+            테스트 데이터 삭제
+          </Button>
+          <Button
+            type="button"
+            className="w-1/2"
+            onClick={() => {
               supabase.auth.signOut()
               router.push('/')
             }}

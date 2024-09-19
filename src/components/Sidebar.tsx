@@ -21,7 +21,11 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, close }) => {
       )}
     >
       <div className="flex justify-end lg:hidden">
-        <IconButton Icon={AiOutlineClose} onClick={close} />
+        <IconButton
+          Icon={AiOutlineClose}
+          label="sidebarClose"
+          onClick={close}
+        />
       </div>
       <Link href="/" className="w-48 font-medium text-gray-600 hover:underline">
         홈
@@ -44,12 +48,14 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, close }) => {
       <div className="mt-10 flex items-center gap-4">
         <IconButton
           Icon={AiFillHome}
+          label="blogLink"
           component={Link}
           href={process.env.NEXT_PUBLIC_BLOG_URL as string}
           target="_blank"
         />
         <IconButton
           Icon={AiFillGithub}
+          label="githubLink"
           component={Link}
           href={process.env.NEXT_PUBLIC_GITHUB_URL as string}
           target="_blank"

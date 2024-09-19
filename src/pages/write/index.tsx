@@ -73,6 +73,7 @@ function PostWritePage() {
             className="rounded-md border border-gray-300 p-2 transition-all hover:border-gray-400"
           />
           <ReactSelect
+            inputId="category"
             options={(existingCategories ?? []).map((category) => ({
               label: category,
               value: category,
@@ -82,6 +83,7 @@ function PostWritePage() {
             isMulti={false}
           />
           <ReactSelect
+            inputId="tags"
             options={(existingTags ?? []).map((tag) => ({
               label: tag,
               value: tag,

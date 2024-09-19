@@ -130,7 +130,11 @@ const Search: React.FC = () => {
             ref={inputRef}
             className="flex-1 p-2 pl-3"
           />
-          <IconButton type="submit" Icon={AiOutlineSearch} />
+          <IconButton
+            type="submit"
+            label="submitMessage"
+            Icon={AiOutlineSearch}
+          />
         </form>
         <Button className="block w-[100px] mt-4 ml-auto" onClick={handleReset}>
           대화 초기화
