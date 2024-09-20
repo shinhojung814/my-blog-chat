@@ -12,13 +12,13 @@ describe('HomePage Test', () => {
     cy.get('[data-cy="blogLink"]').should(
       'have.attr',
       'href',
-      process.env.NEXT_PUBLIC_BLOG_URL,
+      'https://www.notion.so/shinhojung814/Shinho-Jung-2486b27273134677ba8f3b73201a3b28',
     )
 
     cy.get('[data-cy="githubLink"]').should(
       'have.attr',
       'href',
-      process.env.NEXT_PUBLIC_GITHUB_URL,
+      'https://github.com/shinhojung814',
     )
   })
 
