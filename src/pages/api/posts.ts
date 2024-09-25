@@ -18,7 +18,7 @@ export default async function handler(
   res: NextApiResponse<Post | PostgrestError | { error: string }>,
 ) {
   try {
-    const supabase = await createClient(req.cookies)
+    const supabase = await createClient(undefined, req.cookies)
 
     const form = formidable({ multiples: true })
     const [fields, files] = await form.parse(req)

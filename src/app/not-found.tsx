@@ -1,4 +1,4 @@
-function _404Page() {
+function NotFoundPage() {
   return (
     <div className="flex flex-col items-center p-24">
       <h1>페이지를 찾을 수 없습니다.</h1>
@@ -6,4 +6,4 @@ function _404Page() {
   )
 }
 
-export default _404Page
+export default NotFoundPage
