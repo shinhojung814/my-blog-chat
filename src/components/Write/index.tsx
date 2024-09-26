@@ -1,10 +1,12 @@
+'use client'
+
 import dynamic from 'next/dynamic'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { FormEvent, useRef, useState } from 'react'
 
-import Button from '@components/Button'
-import Input from '@components/Input'
-import { MarkdownEditor } from '@components/Markdown'
+import Button from '@components/shared/Button'
+import Input from '@components/shared/Input'
+import { MarkdownEditor } from '@components/shared/Markdown'
 import { useCategories, useTags } from '@utils/hooks'
 
 const ReactSelect = dynamic(() => import('react-select/creatable'), {

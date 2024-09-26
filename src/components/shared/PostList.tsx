@@ -1,8 +1,10 @@
+'use client'
+
 import { useInfiniteQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
-import PostCard from '@components/PostCard'
+import PostCard from '@components/shared/PostCard'
 import { Post } from '@models/post'
 import { cn } from '@utils/style'
 import { createClient } from '@utils/supabase/client'

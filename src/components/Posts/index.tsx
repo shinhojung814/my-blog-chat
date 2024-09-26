@@ -1,23 +1,18 @@
 import { format } from 'date-fns'
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { MarkdownViewer } from '@components/Markdown'
+import { MarkdownViewer } from '@components/shared/Markdown'
 import { Post } from '@models/post'
-import { createClient } from '@utils/supabase/client'
 
-const supabase = createClient()
-
-function PostDetailPage({
-  id,
+const PostPage: React.FC<Post> = ({
   title,
   category,
   tags,
   content,
   created_at,
   image_url,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}) => {
   return (
     <div className="flex flex-col container pt-20 pb-40 gap-8">
       <h1 className="text-4xl font-bold">{title}</h1>
@@ -58,36 +53,4 @@ function PostDetailPage({
   )
 }
 
-export const getStaticProps = (async (context) => {
-  const { data } = await supabase
-    .from('Post')
-    .select('*')
-    .eq('id', Number(context.params?.id))
-
-  if (!data || !data[0]) return { notFound: true }
-
-  const { id, title, category, tags, content, created_at, image_url } = data[0]
-
-  return {
-    props: {
-      id,
-      title,
-      category,
-      tags: JSON.parse(tags) as string[],
-      content,
-      created_at,
-      image_url,
-    },
-  }
-}) satisfies GetStaticProps<Post>
-
-export const getStaticPaths = (async () => {
-  const { data } = await supabase.from('Post').select('id')
-
-  return {
-    paths: data?.map(({ id }) => ({ params: { id: id.toString() } })) ?? [],
-    fallback: 'blocking',
-  }
-}) satisfies GetStaticPaths
-
-export default PostDetailPage
+export default PostPage
