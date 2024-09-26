@@ -1,9 +1,9 @@
 import { cookies } from 'next/headers'
 
-import PostList from '@components/PostList'
+import PostList from '@components/shared/PostList'
 import { createClient } from '@utils/supabase/server'
 
-async function Home() {
+export default async function Home() {
   const supabase = createClient(cookies())
   const { data } = await supabase.from('Post').select('*')
 
@@ -16,5 +16,3 @@ async function Home() {
     />
   )
 }
-
-export default Home

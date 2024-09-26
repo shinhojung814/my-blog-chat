@@ -3,11 +3,9 @@ import Link from 'next/link'
 
 import { createClient } from '@utils/supabase/server'
 
-async function TagsPage() {
+export default async function TagsPage() {
   const supabase = createClient(cookies())
-
   const { data } = await supabase.from('Post').select('tags')
-
   const existingTags = Array.from(
     new Set(data?.flatMap((data) => JSON.parse(data.tags))),
   )
@@ -29,5 +27,3 @@ async function TagsPage() {
     </div>
   )
 }
-
-export default TagsPage

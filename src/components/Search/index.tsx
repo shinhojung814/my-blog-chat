@@ -1,3 +1,5 @@
+'use client'
+
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import type { ChatCompletionMessageParam } from 'openai/resources/index'
@@ -11,10 +13,10 @@ import {
 } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 
-import Button from '@components/Button'
-import IconButton from '@components/IconButton'
-import Message, { MessageProps } from '@components/Message'
-import { PostCardProps } from '@components/PostCard'
+import Button from '@components/shared/Button'
+import IconButton from '@components/shared/IconButton'
+import Message, { MessageProps } from '@components/shared/Message'
+import { PostCardProps } from '@components/shared/PostCard'
 
 const Search: React.FC = () => {
   const [messageParams, setMessageParams] = useState<

@@ -2,7 +2,7 @@ import { BsFillPersonFill, BsRobot } from 'react-icons/bs'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-import PostCard, { PostCardProps } from '@components/PostCard'
+import PostCard, { PostCardProps } from '@components/shared/PostCard'
 import { cn } from '@utils/style'
 
 export type MessageProps = {

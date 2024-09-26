@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { AiOutlineSetting } from 'react-icons/ai'
 import { BsPencilSquare } from 'react-icons/bs'
 
-import IconButton from '@components/IconButton'
+import IconButton from '@components/shared/IconButton'
 
 const Footer: React.FC = () => {
   return (

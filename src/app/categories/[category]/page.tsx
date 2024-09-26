@@ -3,17 +3,21 @@ import { cookies } from 'next/headers'
 import PostList from '@components/shared/PostList'
 import { createClient } from '@utils/supabase/server'
 
-export default async function TagPage({ params }: { params: { tag: string } }) {
+export default async function CategoryPage({
+  params,
+}: {
+  params: { category: string }
+}) {
+  const category = params.category
   const supabase = createClient(cookies())
-  const tag = params.tag
   const { data } = await supabase
     .from('Post')
     .select('*')
-    .like('tags', `%${tag}%`)
+    .eq('category', category)
 
   return (
     <PostList
-      tag={decodeURIComponent(tag)}
+      category={decodeURIComponent(category)}
       initialPosts={data?.map((post) => ({
         ...post,
         tags: JSON.parse(post.tags) as string[],
@@ -24,10 +28,8 @@ export default async function TagPage({ params }: { params: { tag: string } }) {
 
 export const generateStaticParams = async () => {
   const supabase = createClient()
-  const { data } = await supabase.from('Post').select('tags')
-  const tags = Array.from(
-    new Set(data?.flatMap((data) => JSON.parse(data.tags))),
-  )
+  const { data } = await supabase.from('Post').select('category')
+  const categories = Array.from(new Set(data?.map((data) => data.category)))
 
-  return tags.map((tag) => ({ tag }))
+  return categories.map((category) => ({ category }))
 }

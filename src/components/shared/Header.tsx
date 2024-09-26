@@ -1,21 +1,21 @@
+'use client'
+
 import Link from 'next/link'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { BsRobot } from 'react-icons/bs'
 
-import IconButton from '@components/IconButton'
+import IconButton from '@components/shared/IconButton'
+import { useSidebar } from '@components/shared/Providers'
 
-type HeaderProps = {
-  isSidebarOpen: boolean
-  setIsSidebarOpen: (isOpen: boolean) => void
-}
+const Header: React.FC = () => {
+  const { isOpen, setIsOpen } = useSidebar()
 
-const Header: React.FC<HeaderProps> = ({ isSidebarOpen, setIsSidebarOpen }) => {
   return (
     <header className="flex h-14 items-center justify-between border-b px-4 lg:h-16 lg:px-6">
       <IconButton
-        Icon={isSidebarOpen ? AiOutlineClose : AiOutlineMenu}
+        Icon={isOpen ? AiOutlineClose : AiOutlineMenu}
         label="sidebarToggle"
-        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        onClick={() => setIsOpen(!isOpen)}
       />
       <Link href="/">
         <h1 className="text-2xl font-medium text-slate-600 lg:text-3xl">

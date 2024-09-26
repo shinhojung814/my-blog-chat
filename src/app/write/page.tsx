@@ -1,7 +1,5 @@
-import WritePage from '@components/write/WritePage'
+import Write from '@components/Write'
 
-function PostWritePage() {
-  return <WritePage />
+export default function PostWritePage() {
+  return <Write />
 }
-
-export default PostWritePage

@@ -1,16 +1,15 @@
+'use client'
+
 import Link from 'next/link'
 import { AiFillGithub, AiFillHome, AiOutlineClose } from 'react-icons/ai'
 
-import IconButton from '@components/IconButton'
+import IconButton from '@components/shared/IconButton'
+import { useSidebar } from '@components/shared/Providers'
 import { useCategories } from '@utils/hooks'
 import { cn } from '@utils/style'
 
-type SidebarProps = {
-  isOpen: boolean
-  close: () => void
-}
-
-const Sidebar: React.FC<SidebarProps> = ({ isOpen, close }) => {
+const Sidebar: React.FC = () => {
+  const { isOpen, setIsOpen } = useSidebar()
   const { data: existingCategories } = useCategories()
 
   return (
@@ -24,7 +23,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, close }) => {
         <IconButton
           Icon={AiOutlineClose}
           label="sidebarClose"
-          onClick={close}
+          onClick={() => setIsOpen(false)}
         />
       </div>
       <Link href="/" className="w-48 font-medium text-gray-600 hover:underline">
