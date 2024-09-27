@@ -32,7 +32,6 @@ const RAW_RUNTIME_STATE =
           ["@supabase/supabase-js", "npm:2.45.4"],\
           ["@tanstack/react-query", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.56.2"],\
           ["@types/babel__core", "npm:7.20.5"],\
-          ["@types/formidable", "npm:3.4.5"],\
           ["@types/node", "npm:20.16.5"],\
           ["@types/react", "npm:18.3.8"],\
           ["@types/react-dom", "npm:18.3.0"],\
@@ -50,7 +49,6 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-cypress", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:3.5.0"],\
           ["eslint-plugin-prettier", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.2.1"],\
           ["eslint-plugin-tailwindcss", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:3.17.4"],\
-          ["formidable", "npm:3.5.1"],\
           ["next", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:14.2.7"],\
           ["next-remove-imports", "npm:1.0.12"],\
           ["openai", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:4.63.0"],\
@@ -1152,16 +1150,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@types/formidable", [\
-      ["npm:3.4.5", {\
-        "packageLocation": "../../../.yarn/berry/cache/@types-formidable-npm-3.4.5-1fa13c32d2-10c0.zip/node_modules/@types/formidable/",\
-        "packageDependencies": [\
-          ["@types/formidable", "npm:3.4.5"],\
-          ["@types/node", "npm:22.5.5"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["@types/hast", [\
       ["npm:2.3.10", {\
         "packageLocation": "../../../.yarn/berry/cache/@types-hast-npm-2.3.10-2f30349bb8-10c0.zip/node_modules/@types/hast/",\
@@ -1939,15 +1927,6 @@ const RAW_RUNTIME_STATE =
           ["get-intrinsic", "npm:1.2.4"],\
           ["is-array-buffer", "npm:3.0.4"],\
           ["is-shared-array-buffer", "npm:1.0.3"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["asap", [\
-      ["npm:2.0.6", {\
-        "packageLocation": "../../../.yarn/berry/cache/asap-npm-2.0.6-36714d439d-10c0.zip/node_modules/asap/",\
-        "packageDependencies": [\
-          ["asap", "npm:2.0.6"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3087,17 +3066,6 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["devlop", "npm:1.1.0"],\
           ["dequal", "npm:2.0.3"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["dezalgo", [\
-      ["npm:1.0.4", {\
-        "packageLocation": "../../../.yarn/berry/cache/dezalgo-npm-1.0.4-ae3b673c98-10c0.zip/node_modules/dezalgo/",\
-        "packageDependencies": [\
-          ["dezalgo", "npm:1.0.4"],\
-          ["asap", "npm:2.0.6"],\
-          ["wrappy", "npm:1.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4376,18 +4344,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["formidable", [\
-      ["npm:3.5.1", {\
-        "packageLocation": "../../../.yarn/berry/cache/formidable-npm-3.5.1-257e5eab8a-10c0.zip/node_modules/formidable/",\
-        "packageDependencies": [\
-          ["formidable", "npm:3.5.1"],\
-          ["dezalgo", "npm:1.0.4"],\
-          ["hexoid", "npm:1.0.0"],\
-          ["once", "npm:1.4.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["fs-extra", [\
       ["npm:9.1.0", {\
         "packageLocation": "../../../.yarn/berry/cache/fs-extra-npm-9.1.0-983c2ddb4c-10c0.zip/node_modules/fs-extra/",\
@@ -4994,15 +4950,6 @@ const RAW_RUNTIME_STATE =
           ["hast-util-parse-selector", "npm:4.0.0"],\
           ["property-information", "npm:6.5.0"],\
           ["space-separated-tokens", "npm:2.0.2"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["hexoid", [\
-      ["npm:1.0.0", {\
-        "packageLocation": "../../../.yarn/berry/cache/hexoid-npm-1.0.0-2274609209-10c0.zip/node_modules/hexoid/",\
-        "packageDependencies": [\
-          ["hexoid", "npm:1.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6917,7 +6864,6 @@ const RAW_RUNTIME_STATE =
           ["@supabase/supabase-js", "npm:2.45.4"],\
           ["@tanstack/react-query", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.56.2"],\
           ["@types/babel__core", "npm:7.20.5"],\
-          ["@types/formidable", "npm:3.4.5"],\
           ["@types/node", "npm:20.16.5"],\
           ["@types/react", "npm:18.3.8"],\
           ["@types/react-dom", "npm:18.3.0"],\
@@ -6935,7 +6881,6 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-cypress", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:3.5.0"],\
           ["eslint-plugin-prettier", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:5.2.1"],\
           ["eslint-plugin-tailwindcss", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:3.17.4"],\
-          ["formidable", "npm:3.5.1"],\
           ["next", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:14.2.7"],\
           ["next-remove-imports", "npm:1.0.12"],\
           ["openai", "virtual:aef761a8718fe11be7bcf9db3b049a00795d290cda84cf42ddefb55fd1ed21ec55e4c1616013ee73f7db67b18824cc1d64a19889e6e0f6fb741e23b6ec6df610#npm:4.63.0"],\
