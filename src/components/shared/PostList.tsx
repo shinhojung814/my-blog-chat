@@ -6,8 +6,8 @@ import { useInView } from 'react-intersection-observer'
 
 import PostCard from '@components/shared/PostCard'
 import { Post } from '@models/post'
+import { getPosts } from '@utils/fetch'
 import { cn } from '@utils/style'
-import { createClient } from '@utils/supabase/client'
 
 type PostListProps = {
   category?: string
@@ -22,32 +22,20 @@ const PostList: React.FC<PostListProps> = ({
   className,
   initialPosts,
 }) => {
-  const supabase = createClient()
-
   const {
     data: postPages,
     hasNextPage,
     fetchNextPage,
   } = useInfiniteQuery({
     queryKey: ['posts', category, tag],
-    queryFn: async ({ pageParam = 0 }) => {
-      let request = supabase.from('Post').select('*')
+    queryFn: async ({ pageParam }) => {
+      const posts = await getPosts({ category, tag, page: pageParam })
 
-      if (category) request = request.eq('category', category)
-      if (tag) request = request.like('tags', `%${tag}%`)
-
-      const { data } = await request
-        .order('created_at', { ascending: false })
-        .range(pageParam, pageParam + 4)
-
-      if (!data) return { posts: [], nextPage: null }
+      if (!posts) return { posts: [], nextPage: null }
 
       return {
-        posts: data.map((post) => ({
-          ...post,
-          tags: JSON.parse(post.tags) as string[],
-        })),
-        nextPage: data.length === 5 ? pageParam + 5 : null,
+        posts: posts,
+        nextPage: posts?.length === 5 ? pageParam + 5 : null,
       }
     },
     initialData: initialPosts
