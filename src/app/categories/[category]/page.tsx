@@ -1,11 +1,20 @@
+import { Metadata } from 'next'
+
 import PostList from '@components/shared/PostList'
 import { getCategories, getPosts } from '@utils/fetch'
 
-export default async function CategoryPage({
-  params,
-}: {
+type CategoryPageProps = {
   params: { category: string }
-}) {
+}
+
+export const generateMetadata = ({ params }: CategoryPageProps): Metadata => {
+  return {
+    title: `My-Blog-Chat ${decodeURIComponent(params.category)}`,
+    description: `My-Blog-Chat ${decodeURIComponent(params.category)}`,
+  }
+}
+
+export default async function CategoryPage({ params }: CategoryPageProps) {
   const category = decodeURIComponent(params.category)
   const posts = await getPosts({ category })
 

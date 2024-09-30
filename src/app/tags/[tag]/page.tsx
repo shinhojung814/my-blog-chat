@@ -1,7 +1,18 @@
+import { Metadata } from 'next'
+
 import PostList from '@components/shared/PostList'
 import { getPosts, getTags } from '@utils/fetch'
 
-export default async function TagPage({ params }: { params: { tag: string } }) {
+type TagPageProps = { params: { tag: string } }
+
+export const generateMetadata = ({ params }: TagPageProps): Metadata => {
+  return {
+    title: `My-Blog-Chat #${decodeURIComponent(params.tag)}`,
+    description: `My-Blog-Chat #${decodeURIComponent(params.tag)}`,
+  }
+}
+
+export default async function TagPage({ params }: TagPageProps) {
   const tag = decodeURIComponent(params.tag)
   const posts = await getPosts({ tag })
 

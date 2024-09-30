@@ -64,7 +64,7 @@ const PostList: React.FC<PostListProps> = ({
   return (
     <div className={cn('flex flex-col items-center pt-10', className)}>
       <h1 className={cn('text-2xl font-medium', !category && !tag && 'hidden')}>
-        {category ? category : `# ${tag}`}
+        {category ? category : `#${tag}`}
       </h1>
       <div className="grid grid-cols-2 container pt-12 pb-24 gap-x-4 gap-y-6 lg:gap-x-7 lg:gap-y-12">
         {postPages?.pages
